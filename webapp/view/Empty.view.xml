@@ -1,0 +1,3 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ey.fin.ap.controller.Empty">
+    <Image width="100%" height="100%" src="https://wallpapers.com/images/featured/avengers-vm16xv4a69smdauy.jpg"></Image>
+</mvc:View>

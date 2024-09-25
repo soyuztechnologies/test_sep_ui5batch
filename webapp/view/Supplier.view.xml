@@ -1,0 +1,44 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+ xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" 
+     controllerName="ey.fin.ap.controller.Supplier">
+    <Page title="Supplier Data" showNavButton="true" navButtonPress="onBack">
+
+    <ObjectHeader title="{name}" intro="{sinceWhen}" icon="sap-icon://supplier"
+    number="{person} {contactNo}" numberUnit="{noOfStores} Stores"></ObjectHeader>
+
+    <Select selectedKey="{chartType}">
+        <items>
+            <core:Item key="column" text="Column" />
+            <core:Item key="donut" text="Pie" />
+            <core:Item key="line" text="Line" />
+
+        </items>
+    </Select>
+    <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='80%' width="90%" vizType='{chartType}'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{specialty}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="Name"
+                                value="{name}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Supply"
+                                value="{supply}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="Supply" />
+                    <viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension"
+                        values="Name" />
+                </viz:feeds>
+         </viz:VizFrame>
+         
+    </Page>
+    
+</mvc:View>

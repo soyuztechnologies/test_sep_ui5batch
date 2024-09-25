@@ -1,0 +1,31 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"  controllerName="ey.fin.ap.controller.View2">
+    <Page title="View 2" showNavButton="true" navButtonPress="onBack">
+        <content>
+            <ObjectHeader title="{name}" 
+            intro="{healthBenefit}" icon="{image}" number="{price}" numberUnit="{curr}"></ObjectHeader>
+            <IconTabBar>
+                <items>
+                    <IconTabFilter text="More Info" icon="sap-icon://warning">
+                        <core:Fragment fragmentName="ey.fin.ap.fragments.moreInfo" type="XML" />
+                        <Image id="zkas" />
+                    </IconTabFilter>
+
+                    <IconTabFilter text="Suppliers" icon="sap-icon://supplier">
+                        <core:Fragment fragmentName="ey.fin.ap.fragments.supplier" type="XML" />
+                    </IconTabFilter>
+
+                    <IconTabFilter text="Cities" icon="sap-icon://home">
+                        <core:Fragment fragmentName="ey.fin.ap.fragments.cities" type="XML" />
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer ></ToolbarSpacer>
+                <Button text="Save" press="onSave" type="Accept"></Button>
+                <Button text="Cancel" press="onCancel" type="Reject"></Button>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

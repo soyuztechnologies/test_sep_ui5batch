@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <!-- Bootstrap = code which we write to load ui5 framework from cdn -->
+        <script src="https://ui5.sap.com/resources/sap-ui-core.js"
+                data-sap-ui-libs="sap.m"
+                data-sap-ui-theme="sap_fiori_3_dark"
+                data-sap-ui-resource-roots='{
+                    "ey.fin.ap":"./"
+                }'
+                data-sap-ui-bindingSyntax="complex"
+        ></script>
+        <script>
+                
+                //index html merely used to test the component
+                //actual app code starts always from Component.js
+                var oCompContainer = new sap.ui.core.ComponentContainer({
+                    name: 'ey.fin.ap'
+                });
+
+                oCompContainer.placeAt("content");
+           
+        </script>
+    </head>
+    <body class="sapUiBody">
+        <div id="content"></div>
+    </body>
+</html>

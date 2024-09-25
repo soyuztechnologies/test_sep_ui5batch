@@ -1,0 +1,126 @@
+{
+    "sap.app": {
+        "id": "ey.fin.ap",
+        "type": "application",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "dataSources": {
+            "anubhavService":{
+                "type": "OData",
+                "uri": "/sap/opu/odata/sap/ZSEP_ODATA_SRV/",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
+        },
+        "i18n": "i18n/i18n.properties",
+        "title":"{{appTitle}}",
+        "description":"{{appDescription}}",
+        "ach": "FIN-AP-ACC"
+    },
+    "sap.ui": {
+        "fullWidth": true,
+        "technology": "UI5",
+        "deviceTypes":{
+            "desktop": true,
+            "phone": true,
+            "tablet": true
+        },
+        "supportedThemes": ["sap_fiori_3_dark","sap_fiori_3"]
+    },
+    "sap.ui5":{
+        "dependencies": {
+            "minUI5Version":"1.126.2",
+            "libs": {
+                "sap.m":{
+                    "minVersion": "1.126.2"
+                },
+                "sap.ui.layout": {
+                    "minVersion": "1.126.2"
+                }
+            }
+        },
+        "rootView":{
+            "viewName": "ey.fin.ap.view.App",
+            "type": "XML",
+            "id": "idRoot"
+        },
+        "routing": {
+            "config":{
+                "viewPath": "ey.fin.ap.view",
+                "viewType": "XML",
+                "controlId": "idAppCon",
+                "clearControlAggregation": true
+            },
+            "routes":[
+                {
+                    "name": "start",
+                    "pattern": "",
+                    "target":["donald","trump"]
+                },
+                {
+                    "name": "detail",
+                    "pattern": "fruits/{fruitId}",
+                    "target":["donald","modi"]
+                },{
+                    "name": "supplier",
+                    "pattern": "vendor/{suppId}",
+                    "target":["donald","kamala"]
+                },{
+                    "name": "addProduct",
+                    "pattern": "manageProduct",
+                    "target":["donald","putin"]
+                }
+            ],
+            "targets": {
+                "donald":{
+                    "viewName": "View1",
+                    "viewId": "idView1",
+                    "controlAggregation": "masterPages"
+                },
+                "trump": {
+                    "viewName": "Empty",
+                    "viewId": "idEmpty",
+                    "controlAggregation": "detailPages"
+                },
+                "modi": {
+                    "viewName": "View2",
+                    "viewId": "idView2",
+                    "controlAggregation": "detailPages"
+                },
+                "kamala":{
+                    "viewName": "Supplier",
+                    "viewId": "idSupplier",
+                    "controlAggregation": "detailPages"
+                },
+                "putin": {
+                    "viewName": "Add",
+                    "viewId": "idAddView",
+                    "controlAggregation": "detailPages"
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "":{
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "dataSource": "anubhavService",
+                "preload": true
+            },
+            "frt": {
+                "type": "sap.ui.model.json.JSONModel",
+                "preload": true,
+                "uri": "models/mockdata/fruits.json"
+            },
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "preload": true,
+                "settings": {"bundleUrl": "i18n/i18n.properties"}
+            }
+        }       
+    }
+}

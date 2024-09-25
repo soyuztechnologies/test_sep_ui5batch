@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <!-- only allow to chose with what we have -->
+    <Select items="{/cities}" change="onDropdown">
+        <items>
+            <core:Item text="{name}" key="{name}" />
+        </items>
+    </Select>
+    <!-- we can type the additional data what we dont have inside -->
+    <ComboBox items="{/cities}">
+        <items>
+            <core:Item text="{name}" key="{name}" />
+        </items>
+    </ComboBox>
+    <!-- we can type the additional data what we dont have inside -->
+    <MultiComboBox items="{/cities}">
+        <items>
+            <core:Item text="{name}" key="{name}" />
+        </items>
+    </MultiComboBox>
+</core:FragmentDefinition>

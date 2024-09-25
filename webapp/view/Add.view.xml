@@ -1,0 +1,65 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+    xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    controllerName="ey.fin.ap.controller.Add">
+    <Page title="Manage Product">
+        <content>
+            <f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Product Info"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Product Id" />
+				<Input id="prodId" value="{local>/prodData/PRODUCT_ID}" submit="onSearchProduct"/>
+				<Label text="Name/Description" />
+				<Input value="{local>/prodData/NAME}">
+                    <layoutData>
+						<l:GridData span="XL1 L2 M2 S4" />
+					</layoutData>
+				</Input>
+				<Input value="{local>/prodData/DESCRIPTION}">
+				</Input>
+				<Label text="Price/Currency" />
+				<Input value="{local>/prodData/PRICE}">
+					<layoutData>
+						<l:GridData span="XL1 L2 M2 S4" />
+					</layoutData>
+				</Input>
+				<Input value="{local>/prodData/CURRENCY_CODE}" />
+                <Label text="Supplier Id"></Label>
+                <Input value="{local>/prodData/SUPPLIER_ID}" showValueHelp="true" valueHelpRequest="onFilter"></Input>
+                <Text text="{local>/prodData/SUPPLIER_NAME}"></Text>
+				<Label text="Category" />
+				<Select id="category" selectedKey="{local>/prodData/CATEGORY}">
+					<items>
+						<core:Item text="Notebooks" key="Notebooks"/>
+						<core:Item text="Projectors" key="Projectors"/>
+						<core:Item text="Mice" key="Mice"/>
+					</items>
+				</Select>
+			</f:content>
+		</f:SimpleForm>
+        </content>
+        <footer>
+            <Toolbar >
+                <ToolbarSpacer ></ToolbarSpacer>
+                <Button id="idSave" text="Save" icon="sap-icon://save" type="Accept" press="onSave"></Button>
+				<Button id="idDelete" text="Delete" icon="sap-icon://delete" type="Reject" press="onDelete" enabled="false"></Button>
+                <Button text="Clear" icon="sap-icon://cancel" type="Emphasized" press="onClear"></Button>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
