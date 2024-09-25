@@ -1,5 +1,5 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ey.fin.ap.controller.View1">
-    <Page title="View 1">
+    <Page title="Product List">
         <headerContent>
             <Button icon="sap-icon://action" press="onNext"></Button>
         </headerContent>
