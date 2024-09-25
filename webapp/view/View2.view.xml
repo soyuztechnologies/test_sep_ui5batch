@@ -1,5 +1,5 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"  controllerName="ey.fin.ap.controller.View2">
-    <Page title="View 2" showNavButton="true" navButtonPress="onBack">
+    <Page title="Product Details" showNavButton="true" navButtonPress="onBack">
         <content>
             <ObjectHeader title="{name}" 
             intro="{healthBenefit}" icon="{image}" number="{price}" numberUnit="{curr}"></ObjectHeader>
