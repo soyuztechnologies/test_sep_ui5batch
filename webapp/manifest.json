@@ -71,6 +71,10 @@
                     "name": "addProduct",
                     "pattern": "manageProduct",
                     "target":["donald","putin"]
+                },{
+                    "name": "addOrder",
+                    "pattern": "manageOrder",
+                    "target":["donald","trudo"]
                 }
             ],
             "targets": {
@@ -97,6 +101,11 @@
                 "putin": {
                     "viewName": "Add",
                     "viewId": "idAddView",
+                    "controlAggregation": "detailPages"
+                },
+                "trudo":{
+                    "viewName": "AddOrder",
+                    "viewId": "idAddOrder",
                     "controlAggregation": "detailPages"
                 }
             }

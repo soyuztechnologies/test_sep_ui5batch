@@ -29,6 +29,7 @@
             <Toolbar >
                 <ToolbarSpacer ></ToolbarSpacer>
                 <Button icon="sap-icon://add" press="onAddProduct" tooltip="Add new product"></Button>
+                <Button icon="sap-icon://customer-order-entry" press="onAddOrder" tooltip="Manage Sales Order"></Button>
             </Toolbar>
         </footer>
         <!-- <Button text="Go to Next" press="onNext" /> -->

@@ -79,6 +79,10 @@ sap.ui.define(
                 //call router to load add view route
                 this.oRouter.navTo("addProduct");
             },
+            onAddOrder: function(){
+                //call router to load add view route
+                this.oRouter.navTo("addOrder");
+            },
             onSearch: function(oEvent){
                 //Step 1: get the value user enters in search field
                 var sValue = oEvent.getParameter("query");
